@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: aa-quota
+  namespace: aa
+  labels:
+    kubernetes.io/metadata.name: aa
+    backstage.io/kubernetes-id: aa
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi

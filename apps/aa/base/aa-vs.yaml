@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: aa-vs
+  namespace: aa
+  labels:
+    app: aa
+    version: 0.0.1
+    backstage.io/kubernetes-id: aa
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - aa.diegoluisi.eti.br
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: aa-svc
+      weight: 100
