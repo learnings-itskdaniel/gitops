@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: test-app-quota
+  namespace: test-app
+  labels:
+    kubernetes.io/metadata.name: test-app
+    backstage.io/kubernetes-id: test-app
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
