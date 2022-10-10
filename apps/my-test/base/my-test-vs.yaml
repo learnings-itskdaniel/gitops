@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: my-test-vs
+  namespace: my-test
+  labels:
+    app: my-test
+    version: 0.0.1
+    backstage.io/kubernetes-id: my-test
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - my-test.diegoluisi.eti.br
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: my-test-svc
+      weight: 100
