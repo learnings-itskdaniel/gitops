@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test-app-two-hpa
+  labels:
+    app: test-app-two
+    version: 0.0.1
+    backstage.io/kubernetes-id: test-app-two
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: test-app-two
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75

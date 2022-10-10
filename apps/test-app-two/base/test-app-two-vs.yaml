@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test-app-two-vs
+  namespace: test-app-two
+  labels:
+    app: test-app-two
+    version: 0.0.1
+    backstage.io/kubernetes-id: test-app-two
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - test-app-two.diegoluisi.eti.br
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: test-app-two-svc
+      weight: 100
