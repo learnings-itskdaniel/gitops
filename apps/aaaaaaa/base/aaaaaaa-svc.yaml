@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aaaaaaa-svc
+  namespace: aaaaaaa
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: aaaaaaa.diegoluisi.eti.br
+  labels:
+    app: aaaaaaa
+    version: 0.0.1
+    backstage.io/kubernetes-id: aaaaaaa
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: aaaaaaa

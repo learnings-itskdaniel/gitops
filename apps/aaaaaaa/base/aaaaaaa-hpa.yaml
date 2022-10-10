@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: aaaaaaa-hpa
+  labels:
+    app: aaaaaaa
+    version: 0.0.1
+    backstage.io/kubernetes-id: aaaaaaa
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: aaaaaaa
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75
