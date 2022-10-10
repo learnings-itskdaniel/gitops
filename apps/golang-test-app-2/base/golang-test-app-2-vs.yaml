@@ -1,0 +1,21 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: golang-test-app-2-vs
+  namespace: golang-test-app-2
+  labels:
+    app: golang-test-app-2
+    version: 0.0.1
+    backstage.io/kubernetes-id: golang-test-app-2
+spec:
+  gateways:
+  - istio-system/istio-ingressgateway
+  hosts:
+  - golang-test-app-2.diegoluisi.eti.br
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: golang-test-app-2-svc
+      weight: 100

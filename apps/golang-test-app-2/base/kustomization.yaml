@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: golang-test-app-2
+resources:
+  - ns.yaml
+  - golang-test-app-2-quota.yaml
+  - golang-test-app-2-deploy.yaml
+  - golang-test-app-2-svc.yaml
+  - golang-test-app-2-vs.yaml
+  - golang-test-app-2-hpa.yaml

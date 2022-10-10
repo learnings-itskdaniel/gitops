@@ -1,0 +1,11 @@
+{
+  "appName": "golang-test-app-2",
+  "userGivenName": "golang-test-app-2",
+  "destNamespace": "golang-test-app-2",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/golang-test-app-2/overlays/dev",
+  "srcRepoURL": "https://github.com/diegoluisi/argo.git",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}
